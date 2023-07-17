@@ -14,4 +14,4 @@ Porém abaixo, segue detalhes de quais modulos o sistema possuirá:
 - Gerenciamento de Estoque
 - Permissões de acesso para cada funcionário
 
-Sistema utilizando o MySQL como armazenamento de dados.
+Sistema utilizará o MySQL como armazenamento e consulta de dados.
