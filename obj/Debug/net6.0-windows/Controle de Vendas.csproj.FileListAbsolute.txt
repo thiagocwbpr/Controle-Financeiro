@@ -1,0 +1,34 @@
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\Controle de Vendas.exe
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\Controle de Vendas.deps.json
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\Controle de Vendas.runtimeconfig.json
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\Controle de Vendas.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\Controle de Vendas.pdb
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\Google.Protobuf.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\MySql.Data.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\System.IO.Pipelines.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\System.Text.Json.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\runtimes\win-x64\native\comerr64.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\runtimes\win-x64\native\gssapi64.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\runtimes\win-x64\native\k5sprt64.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\runtimes\win-x64\native\krb5_64.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.csproj.AssemblyReference.cache
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle_de_Vendas.br.com.projeto.view.FrmClientes.resources
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle_de_Vendas.Form1.resources
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.csproj.GenerateResource.cache
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.GeneratedMSBuildEditorConfig.editorconfig
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.AssemblyInfoInputs.cache
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.AssemblyInfo.cs
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.csproj.CoreCompileInputs.cache
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.csproj.CopyComplete
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\refint\Controle de Vendas.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.pdb
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.genruntimeconfig.cache
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\ref\Controle de Vendas.dll
