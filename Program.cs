@@ -1,4 +1,6 @@
+using Controle_de_Vendas.br.com.projeto.conexao;
 using Controle_de_Vendas.br.com.projeto.view;
+using MySql.Data.MySqlClient;
 
 namespace Controle_de_Vendas
 {
@@ -14,6 +16,7 @@ namespace Controle_de_Vendas
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new FrmClientes());
+
         }
     }
 }

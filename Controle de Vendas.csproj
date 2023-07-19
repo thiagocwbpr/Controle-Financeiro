@@ -13,10 +13,4 @@
     <PackageReference Include="MySql.Data" Version="8.0.33" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="br.com.projeto.dao\" />
-    <Folder Include="br.com.projeto.model\" />
-    <Folder Include="br.com.projeto.conexao\" />
-  </ItemGroup>
-
 </Project>

@@ -32,3 +32,4 @@ X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\refint\Contr
 X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.pdb
 X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle de Vendas.genruntimeconfig.cache
 X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\ref\Controle de Vendas.dll
+X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\Controle de Vendas.dll.config

@@ -31,7 +31,6 @@
             panel1 = new Panel();
             label1 = new Label();
             TabClientes = new TabControl();
-            tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             CbUf = new ComboBox();
             TxtComp = new TextBox();
@@ -59,18 +58,21 @@
             label3 = new Label();
             TxtCodigo = new TextBox();
             label2 = new Label();
+            tabPage1 = new TabPage();
+            TabelaCliente = new DataGridView();
+            BtnPesquisar = new Button();
+            TxtPesquisa = new TextBox();
+            label15 = new Label();
             BtnNovo = new Button();
             BtnSalvar = new Button();
             BtnEditar = new Button();
             BtnExcluir = new Button();
-            TxtPesquisa = new TextBox();
-            label15 = new Label();
-            BtnPesquisar = new Button();
-            TabelaCliente = new DataGridView();
+            TxtCidade = new TextBox();
+            label16 = new Label();
             panel1.SuspendLayout();
             TabClientes.SuspendLayout();
-            tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TabelaCliente).BeginInit();
             SuspendLayout();
             // 
@@ -110,24 +112,10 @@
             TabClientes.Size = new Size(700, 230);
             TabClientes.TabIndex = 1;
             // 
-            // tabPage1
-            // 
-            tabPage1.Controls.Add(TabelaCliente);
-            tabPage1.Controls.Add(BtnPesquisar);
-            tabPage1.Controls.Add(TxtPesquisa);
-            tabPage1.Controls.Add(label15);
-            tabPage1.Location = new Point(4, 26);
-            tabPage1.Margin = new Padding(3, 2, 3, 2);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 2, 3, 2);
-            tabPage1.RightToLeft = RightToLeft.No;
-            tabPage1.Size = new Size(692, 200);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Consulta";
-            tabPage1.UseVisualStyleBackColor = true;
-            // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(TxtCidade);
+            tabPage2.Controls.Add(label16);
             tabPage2.Controls.Add(CbUf);
             tabPage2.Controls.Add(TxtComp);
             tabPage2.Controls.Add(label14);
@@ -168,7 +156,7 @@
             // 
             CbUf.FormattingEnabled = true;
             CbUf.Items.AddRange(new object[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
-            CbUf.Location = new Point(444, 170);
+            CbUf.Location = new Point(538, 170);
             CbUf.Margin = new Padding(3, 2, 3, 2);
             CbUf.Name = "CbUf";
             CbUf.Size = new Size(147, 25);
@@ -176,7 +164,7 @@
             // 
             // TxtComp
             // 
-            TxtComp.Location = new Point(330, 142);
+            TxtComp.Location = new Point(315, 142);
             TxtComp.Margin = new Padding(3, 2, 3, 2);
             TxtComp.Name = "TxtComp";
             TxtComp.Size = new Size(70, 22);
@@ -196,7 +184,7 @@
             // 
             label13.AutoSize = true;
             label13.ForeColor = SystemColors.Highlight;
-            label13.Location = new Point(412, 172);
+            label13.Location = new Point(506, 172);
             label13.Name = "label13";
             label13.Size = new Size(25, 17);
             label13.TabIndex = 22;
@@ -204,17 +192,17 @@
             // 
             // TxtBairro
             // 
-            TxtBairro.Location = new Point(462, 142);
+            TxtBairro.Location = new Point(444, 144);
             TxtBairro.Margin = new Padding(3, 2, 3, 2);
             TxtBairro.Name = "TxtBairro";
-            TxtBairro.Size = new Size(216, 22);
+            TxtBairro.Size = new Size(110, 22);
             TxtBairro.TabIndex = 21;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.ForeColor = SystemColors.Highlight;
-            label12.Location = new Point(409, 142);
+            label12.Location = new Point(391, 144);
             label12.Name = "label12";
             label12.Size = new Size(45, 17);
             label12.TabIndex = 20;
@@ -222,7 +210,7 @@
             // 
             // TxtNumero
             // 
-            TxtNumero.Location = new Point(639, 112);
+            TxtNumero.Location = new Point(645, 112);
             TxtNumero.Margin = new Padding(3, 2, 3, 2);
             TxtNumero.Name = "TxtNumero";
             TxtNumero.Size = new Size(39, 22);
@@ -232,7 +220,7 @@
             // 
             label11.AutoSize = true;
             label11.ForeColor = SystemColors.Highlight;
-            label11.Location = new Point(607, 115);
+            label11.Location = new Point(613, 115);
             label11.Name = "label11";
             label11.Size = new Size(24, 17);
             label11.TabIndex = 18;
@@ -243,7 +231,7 @@
             TxtEndereco.Location = new Point(303, 112);
             TxtEndereco.Margin = new Padding(3, 2, 3, 2);
             TxtEndereco.Name = "TxtEndereco";
-            TxtEndereco.Size = new Size(302, 22);
+            TxtEndereco.Size = new Size(288, 22);
             TxtEndereco.TabIndex = 17;
             // 
             // label10
@@ -258,7 +246,7 @@
             // 
             // TxtCep
             // 
-            TxtCep.Location = new Point(265, 170);
+            TxtCep.Location = new Point(599, 143);
             TxtCep.Margin = new Padding(3, 2, 3, 2);
             TxtCep.Mask = "##.###.###";
             TxtCep.Name = "TxtCep";
@@ -270,7 +258,7 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = SystemColors.Highlight;
-            label9.Location = new Point(223, 172);
+            label9.Location = new Point(557, 145);
             label9.Name = "label9";
             label9.Size = new Size(33, 17);
             label9.TabIndex = 14;
@@ -409,6 +397,64 @@
             label2.TabIndex = 0;
             label2.Text = "Código:";
             // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(TabelaCliente);
+            tabPage1.Controls.Add(BtnPesquisar);
+            tabPage1.Controls.Add(TxtPesquisa);
+            tabPage1.Controls.Add(label15);
+            tabPage1.Location = new Point(4, 26);
+            tabPage1.Margin = new Padding(3, 2, 3, 2);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3, 2, 3, 2);
+            tabPage1.RightToLeft = RightToLeft.No;
+            tabPage1.Size = new Size(692, 200);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Consulta";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // TabelaCliente
+            // 
+            TabelaCliente.AllowUserToAddRows = false;
+            TabelaCliente.AllowUserToDeleteRows = false;
+            TabelaCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TabelaCliente.Location = new Point(8, 54);
+            TabelaCliente.Name = "TabelaCliente";
+            TabelaCliente.ReadOnly = true;
+            TabelaCliente.RowTemplate.Height = 25;
+            TabelaCliente.Size = new Size(676, 141);
+            TabelaCliente.TabIndex = 7;
+            // 
+            // BtnPesquisar
+            // 
+            BtnPesquisar.BackColor = SystemColors.Highlight;
+            BtnPesquisar.ForeColor = Color.White;
+            BtnPesquisar.Location = new Point(405, 5);
+            BtnPesquisar.Margin = new Padding(3, 2, 3, 2);
+            BtnPesquisar.Name = "BtnPesquisar";
+            BtnPesquisar.Size = new Size(94, 28);
+            BtnPesquisar.TabIndex = 6;
+            BtnPesquisar.Text = "Pesquisar";
+            BtnPesquisar.UseVisualStyleBackColor = false;
+            // 
+            // TxtPesquisa
+            // 
+            TxtPesquisa.Location = new Point(68, 8);
+            TxtPesquisa.Margin = new Padding(3, 2, 3, 2);
+            TxtPesquisa.Name = "TxtPesquisa";
+            TxtPesquisa.Size = new Size(321, 22);
+            TxtPesquisa.TabIndex = 5;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.ForeColor = SystemColors.Highlight;
+            label15.Location = new Point(8, 10);
+            label15.Name = "label15";
+            label15.Size = new Size(47, 17);
+            label15.TabIndex = 4;
+            label15.Text = "Nome:";
+            // 
             // BtnNovo
             // 
             BtnNovo.BackColor = SystemColors.Highlight;
@@ -420,6 +466,7 @@
             BtnNovo.TabIndex = 2;
             BtnNovo.Text = "Novo";
             BtnNovo.UseVisualStyleBackColor = false;
+            BtnNovo.Click += BtnNovo_Click;
             // 
             // BtnSalvar
             // 
@@ -432,6 +479,7 @@
             BtnSalvar.TabIndex = 3;
             BtnSalvar.Text = "Salvar";
             BtnSalvar.UseVisualStyleBackColor = false;
+            BtnSalvar.Click += BtnSalvar_Click;
             // 
             // BtnEditar
             // 
@@ -457,53 +505,29 @@
             BtnExcluir.Text = "Excluir";
             BtnExcluir.UseVisualStyleBackColor = false;
             // 
-            // TxtPesquisa
+            // TxtCidade
             // 
-            TxtPesquisa.Location = new Point(68, 8);
-            TxtPesquisa.Margin = new Padding(3, 2, 3, 2);
-            TxtPesquisa.Name = "TxtPesquisa";
-            TxtPesquisa.Size = new Size(321, 22);
-            TxtPesquisa.TabIndex = 5;
+            TxtCidade.Location = new Point(274, 172);
+            TxtCidade.Margin = new Padding(3, 2, 3, 2);
+            TxtCidade.Name = "TxtCidade";
+            TxtCidade.Size = new Size(214, 22);
+            TxtCidade.TabIndex = 27;
             // 
-            // label15
+            // label16
             // 
-            label15.AutoSize = true;
-            label15.ForeColor = SystemColors.Highlight;
-            label15.Location = new Point(8, 10);
-            label15.Name = "label15";
-            label15.Size = new Size(47, 17);
-            label15.TabIndex = 4;
-            label15.Text = "Nome:";
-            // 
-            // BtnPesquisar
-            // 
-            BtnPesquisar.BackColor = SystemColors.Highlight;
-            BtnPesquisar.ForeColor = Color.White;
-            BtnPesquisar.Location = new Point(405, 5);
-            BtnPesquisar.Margin = new Padding(3, 2, 3, 2);
-            BtnPesquisar.Name = "BtnPesquisar";
-            BtnPesquisar.Size = new Size(94, 28);
-            BtnPesquisar.TabIndex = 6;
-            BtnPesquisar.Text = "Pesquisar";
-            BtnPesquisar.UseVisualStyleBackColor = false;
-            // 
-            // TabelaCliente
-            // 
-            TabelaCliente.AllowUserToAddRows = false;
-            TabelaCliente.AllowUserToDeleteRows = false;
-            TabelaCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TabelaCliente.Location = new Point(8, 54);
-            TabelaCliente.Name = "TabelaCliente";
-            TabelaCliente.ReadOnly = true;
-            TabelaCliente.RowTemplate.Height = 25;
-            TabelaCliente.Size = new Size(676, 141);
-            TabelaCliente.TabIndex = 7;
+            label16.AutoSize = true;
+            label16.ForeColor = SystemColors.Highlight;
+            label16.Location = new Point(221, 172);
+            label16.Name = "label16";
+            label16.Size = new Size(55, 17);
+            label16.TabIndex = 26;
+            label16.Text = "Cidade:";
             // 
             // FrmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 352);
+            ClientSize = new Size(700, 356);
             Controls.Add(BtnExcluir);
             Controls.Add(BtnEditar);
             Controls.Add(BtnSalvar);
@@ -517,10 +541,10 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             TabClientes.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)TabelaCliente).EndInit();
             ResumeLayout(false);
         }
@@ -566,5 +590,7 @@
         private Button BtnPesquisar;
         private TextBox TxtPesquisa;
         private Label label15;
+        private TextBox TxtCidade;
+        private Label label16;
     }
 }
