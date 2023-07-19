@@ -32,6 +32,8 @@
             label1 = new Label();
             TabClientes = new TabControl();
             tabPage2 = new TabPage();
+            TxtCidade = new TextBox();
+            label16 = new Label();
             CbUf = new ComboBox();
             TxtComp = new TextBox();
             label14 = new Label();
@@ -67,8 +69,6 @@
             BtnSalvar = new Button();
             BtnEditar = new Button();
             BtnExcluir = new Button();
-            TxtCidade = new TextBox();
-            label16 = new Label();
             panel1.SuspendLayout();
             TabClientes.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -151,6 +151,24 @@
             tabPage2.Text = "Dados Pessoais";
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
+            // 
+            // TxtCidade
+            // 
+            TxtCidade.Location = new Point(274, 172);
+            TxtCidade.Margin = new Padding(3, 2, 3, 2);
+            TxtCidade.Name = "TxtCidade";
+            TxtCidade.Size = new Size(214, 22);
+            TxtCidade.TabIndex = 27;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.ForeColor = SystemColors.Highlight;
+            label16.Location = new Point(221, 172);
+            label16.Name = "label16";
+            label16.Size = new Size(55, 17);
+            label16.TabIndex = 26;
+            label16.Text = "Cidade:";
             // 
             // CbUf
             // 
@@ -287,7 +305,7 @@
             // 
             TxtTelefone.Location = new Point(78, 110);
             TxtTelefone.Margin = new Padding(3, 2, 3, 2);
-            TxtTelefone.Mask = "(##) #####.###";
+            TxtTelefone.Mask = "(##) #####.####";
             TxtTelefone.Name = "TxtTelefone";
             TxtTelefone.Size = new Size(110, 22);
             TxtTelefone.TabIndex = 11;
@@ -412,6 +430,7 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Consulta";
             tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
             // 
             // TabelaCliente
             // 
@@ -424,6 +443,7 @@
             TabelaCliente.RowTemplate.Height = 25;
             TabelaCliente.Size = new Size(676, 141);
             TabelaCliente.TabIndex = 7;
+            TabelaCliente.CellContentClick += TabelaCliente_CellContentClick;
             // 
             // BtnPesquisar
             // 
@@ -505,24 +525,6 @@
             BtnExcluir.Text = "Excluir";
             BtnExcluir.UseVisualStyleBackColor = false;
             // 
-            // TxtCidade
-            // 
-            TxtCidade.Location = new Point(274, 172);
-            TxtCidade.Margin = new Padding(3, 2, 3, 2);
-            TxtCidade.Name = "TxtCidade";
-            TxtCidade.Size = new Size(214, 22);
-            TxtCidade.TabIndex = 27;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.ForeColor = SystemColors.Highlight;
-            label16.Location = new Point(221, 172);
-            label16.Name = "label16";
-            label16.Size = new Size(55, 17);
-            label16.TabIndex = 26;
-            label16.Text = "Cidade:";
-            // 
             // FrmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -538,6 +540,7 @@
             Name = "FrmClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Clientes";
+            Load += FrmClientes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             TabClientes.ResumeLayout(false);

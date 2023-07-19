@@ -1,4 +1,5 @@
 using Controle_de_Vendas.br.com.projeto.conexao;
+using Controle_de_Vendas.br.com.projeto.dao;
 using Controle_de_Vendas.br.com.projeto.view;
 using MySql.Data.MySqlClient;
 
