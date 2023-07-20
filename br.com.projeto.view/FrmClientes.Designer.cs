@@ -443,6 +443,7 @@
             TabelaCliente.RowTemplate.Height = 25;
             TabelaCliente.Size = new Size(676, 141);
             TabelaCliente.TabIndex = 7;
+            TabelaCliente.CellClick += TabelaCliente_CellClick;
             TabelaCliente.CellContentClick += TabelaCliente_CellContentClick;
             // 
             // BtnPesquisar
@@ -541,6 +542,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Clientes";
             Load += FrmClientes_Load;
+            Click += FrmClientes_Click;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             TabClientes.ResumeLayout(false);

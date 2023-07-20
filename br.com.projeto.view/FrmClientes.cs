@@ -77,5 +77,30 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
             TabelaCliente.DataSource = dao.ListarClientes();
         }
+
+        private void FrmClientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabelaCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Pegar os dados da linha selecionada
+
+            TxtCodigo.Text = TabelaCliente.CurrentRow.Cells[0].Value.ToString();
+            TxtNome.Text = TabelaCliente.CurrentRow.Cells[1].Value.ToString();
+            TxtRg.Text = TabelaCliente.CurrentRow.Cells[2].Value.ToString();
+            TxtCpf.Text = TabelaCliente.CurrentRow.Cells[3].Value.ToString();
+            TxtEmail.Text = TabelaCliente.CurrentRow.Cells[4].Value.ToString();
+            TxtTelefone.Text = TabelaCliente.CurrentRow.Cells[5].Value.ToString();
+            TxtCelular.Text = TabelaCliente.CurrentRow.Cells[6].Value.ToString();
+            TxtCep.Text = TabelaCliente.CurrentRow.Cells[7].Value.ToString();
+            TxtEndereco.Text = TabelaCliente.CurrentRow.Cells[8].Value.ToString();
+            TxtNumero.Text = TabelaCliente.CurrentRow.Cells[9].Value.ToString();
+            TxtComp.Text = TabelaCliente.CurrentRow.Cells[10].Value.ToString();
+            TxtBairro.Text = TabelaCliente.CurrentRow.Cells[11].Value.ToString();
+            TxtCidade.Text = TabelaCliente.CurrentRow.Cells[12].Value.ToString();
+            CbUf.Text = TabelaCliente.CurrentRow.Cells[13].Value.ToString();
+        }
     }
 }

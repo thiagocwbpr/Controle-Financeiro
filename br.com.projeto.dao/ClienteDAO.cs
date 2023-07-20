@@ -121,8 +121,90 @@ namespace Controle_de_Vendas.br.com.projeto.dao
             }
             return null;
         }
+
         // Metodo AlterarCliente
+        public void AlterarCliente(Cliente obj)
+        {
+            try
+            {
+                string sql = @"UPDATE tb_clientes SET(
+                               nome=@nome,
+                               rg=@rg,
+                               cpf=@cpf,
+                               email=@email,
+                               telefone=@telefone,
+                               celular=@celular,
+                               cep=@cep,
+                               endereco=@endereco,
+                               numero=@numero,
+                               complemento=@complemento,
+                               bairro=@bairro,
+                               cidade=@cidade,
+                               estado=@estado)
+                                    WHERE id=@id";
+
+                // Organizando o comando SQL com a classe clientes.
+
+                MySqlCommand ExecutaCmd = new MySqlCommand(sql, conexao);
+
+                ExecutaCmd.Parameters.AddWithValue("@id", obj.Id);
+                ExecutaCmd.Parameters.AddWithValue("@nome", obj.Nome);
+                ExecutaCmd.Parameters.AddWithValue("@rg", obj.Rg);
+                ExecutaCmd.Parameters.AddWithValue("@cpf", obj.Cpf);
+                ExecutaCmd.Parameters.AddWithValue("@email", obj.Email);
+                ExecutaCmd.Parameters.AddWithValue("@telefone", obj.Telefone);
+                ExecutaCmd.Parameters.AddWithValue("@celular", obj.Celular);
+                ExecutaCmd.Parameters.AddWithValue("@cep", obj.Cep);
+                ExecutaCmd.Parameters.AddWithValue("@endereco", obj.Endereco);
+                ExecutaCmd.Parameters.AddWithValue("@numero", obj.Numero);
+                ExecutaCmd.Parameters.AddWithValue("@complemento", obj.Complemento);
+                ExecutaCmd.Parameters.AddWithValue("@bairro", obj.Bairro);
+                ExecutaCmd.Parameters.AddWithValue("@cidade", obj.Cidade);
+                ExecutaCmd.Parameters.AddWithValue("@estado", obj.Uf);
+
+                // Abrir a conexão e executar o comando SQL
+
+                conexao.Open();
+                ExecutaCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Dados alterados com sucesso!");
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Alteração não realizada! Verfique o erro : " + erro);
+            }
+        }
         // Metodo ExcluirCliente
+
+        public void ExcluirCliente(Cliente obj)
+        {
+            try
+            {
+                string sql = @"DELETE FROM tb_clientes 
+                                         WHERE id=@id";
+
+                // Organizando o comando SQL com a classe clientes.
+
+                MySqlCommand ExecutaCmd = new MySqlCommand(sql, conexao);
+
+                ExecutaCmd.Parameters.AddWithValue("@id", obj.Id);
+
+                // Abrir a conexão e executar o comando SQL
+
+                conexao.Open();
+                ExecutaCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Dados excluídos com sucesso!");
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Os dados não foram excluídos! Verfique o erro : " + erro);
+            }
+        }
 
         // Metodo BuscarClientePorCpf
     }
