@@ -31,7 +31,7 @@
             panel1 = new Panel();
             label1 = new Label();
             TabClientes = new TabControl();
-            tabPage2 = new TabPage();
+            tabPage1 = new TabPage();
             TxtCidade = new TextBox();
             label16 = new Label();
             CbUf = new ComboBox();
@@ -60,7 +60,7 @@
             label3 = new Label();
             TxtCodigo = new TextBox();
             label2 = new Label();
-            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
             TabelaCliente = new DataGridView();
             BtnPesquisar = new Button();
             TxtPesquisa = new TextBox();
@@ -71,8 +71,8 @@
             BtnExcluir = new Button();
             panel1.SuspendLayout();
             TabClientes.SuspendLayout();
-            tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TabelaCliente).BeginInit();
             SuspendLayout();
             // 
@@ -100,8 +100,8 @@
             // 
             // TabClientes
             // 
-            TabClientes.Controls.Add(tabPage2);
             TabClientes.Controls.Add(tabPage1);
+            TabClientes.Controls.Add(tabPage2);
             TabClientes.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TabClientes.Location = new Point(0, 78);
             TabClientes.Margin = new Padding(3, 2, 3, 2);
@@ -112,45 +112,45 @@
             TabClientes.Size = new Size(700, 230);
             TabClientes.TabIndex = 1;
             // 
-            // tabPage2
+            // tabPage1
             // 
-            tabPage2.Controls.Add(TxtCidade);
-            tabPage2.Controls.Add(label16);
-            tabPage2.Controls.Add(CbUf);
-            tabPage2.Controls.Add(TxtComp);
-            tabPage2.Controls.Add(label14);
-            tabPage2.Controls.Add(label13);
-            tabPage2.Controls.Add(TxtBairro);
-            tabPage2.Controls.Add(label12);
-            tabPage2.Controls.Add(TxtNumero);
-            tabPage2.Controls.Add(label11);
-            tabPage2.Controls.Add(TxtEndereco);
-            tabPage2.Controls.Add(label10);
-            tabPage2.Controls.Add(TxtCep);
-            tabPage2.Controls.Add(label9);
-            tabPage2.Controls.Add(TxtCelular);
-            tabPage2.Controls.Add(label8);
-            tabPage2.Controls.Add(TxtTelefone);
-            tabPage2.Controls.Add(label7);
-            tabPage2.Controls.Add(TxtCpf);
-            tabPage2.Controls.Add(label6);
-            tabPage2.Controls.Add(TxtRg);
-            tabPage2.Controls.Add(label5);
-            tabPage2.Controls.Add(TxtEmail);
-            tabPage2.Controls.Add(label4);
-            tabPage2.Controls.Add(TxtNome);
-            tabPage2.Controls.Add(label3);
-            tabPage2.Controls.Add(TxtCodigo);
-            tabPage2.Controls.Add(label2);
-            tabPage2.Location = new Point(4, 26);
-            tabPage2.Margin = new Padding(3, 2, 3, 2);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 2, 3, 2);
-            tabPage2.Size = new Size(692, 200);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Dados Pessoais";
-            tabPage2.UseVisualStyleBackColor = true;
-            tabPage2.Click += tabPage2_Click;
+            tabPage1.Controls.Add(TxtCidade);
+            tabPage1.Controls.Add(label16);
+            tabPage1.Controls.Add(CbUf);
+            tabPage1.Controls.Add(TxtComp);
+            tabPage1.Controls.Add(label14);
+            tabPage1.Controls.Add(label13);
+            tabPage1.Controls.Add(TxtBairro);
+            tabPage1.Controls.Add(label12);
+            tabPage1.Controls.Add(TxtNumero);
+            tabPage1.Controls.Add(label11);
+            tabPage1.Controls.Add(TxtEndereco);
+            tabPage1.Controls.Add(label10);
+            tabPage1.Controls.Add(TxtCep);
+            tabPage1.Controls.Add(label9);
+            tabPage1.Controls.Add(TxtCelular);
+            tabPage1.Controls.Add(label8);
+            tabPage1.Controls.Add(TxtTelefone);
+            tabPage1.Controls.Add(label7);
+            tabPage1.Controls.Add(TxtCpf);
+            tabPage1.Controls.Add(label6);
+            tabPage1.Controls.Add(TxtRg);
+            tabPage1.Controls.Add(label5);
+            tabPage1.Controls.Add(TxtEmail);
+            tabPage1.Controls.Add(label4);
+            tabPage1.Controls.Add(TxtNome);
+            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(TxtCodigo);
+            tabPage1.Controls.Add(label2);
+            tabPage1.Location = new Point(4, 26);
+            tabPage1.Margin = new Padding(3, 2, 3, 2);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3, 2, 3, 2);
+            tabPage1.Size = new Size(692, 200);
+            tabPage1.TabIndex = 1;
+            tabPage1.Text = "Dados Pessoais";
+            tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage2_Click;
             // 
             // TxtCidade
             // 
@@ -415,22 +415,22 @@
             label2.TabIndex = 0;
             label2.Text = "Código:";
             // 
-            // tabPage1
+            // tabPage2
             // 
-            tabPage1.Controls.Add(TabelaCliente);
-            tabPage1.Controls.Add(BtnPesquisar);
-            tabPage1.Controls.Add(TxtPesquisa);
-            tabPage1.Controls.Add(label15);
-            tabPage1.Location = new Point(4, 26);
-            tabPage1.Margin = new Padding(3, 2, 3, 2);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 2, 3, 2);
-            tabPage1.RightToLeft = RightToLeft.No;
-            tabPage1.Size = new Size(692, 200);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Consulta";
-            tabPage1.UseVisualStyleBackColor = true;
-            tabPage1.Click += tabPage1_Click;
+            tabPage2.Controls.Add(TabelaCliente);
+            tabPage2.Controls.Add(BtnPesquisar);
+            tabPage2.Controls.Add(TxtPesquisa);
+            tabPage2.Controls.Add(label15);
+            tabPage2.Location = new Point(4, 26);
+            tabPage2.Margin = new Padding(3, 2, 3, 2);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3, 2, 3, 2);
+            tabPage2.RightToLeft = RightToLeft.No;
+            tabPage2.Size = new Size(692, 200);
+            tabPage2.TabIndex = 0;
+            tabPage2.Text = "Consulta";
+            tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Click += tabPage1_Click;
             // 
             // TabelaCliente
             // 
@@ -513,6 +513,7 @@
             BtnEditar.TabIndex = 4;
             BtnEditar.Text = "Editar";
             BtnEditar.UseVisualStyleBackColor = false;
+            BtnEditar.Click += BtnEditar_Click;
             // 
             // BtnExcluir
             // 
@@ -525,6 +526,7 @@
             BtnExcluir.TabIndex = 5;
             BtnExcluir.Text = "Excluir";
             BtnExcluir.UseVisualStyleBackColor = false;
+            BtnExcluir.Click += BtnExcluir_Click;
             // 
             // FrmClientes
             // 
@@ -546,10 +548,10 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             TabClientes.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)TabelaCliente).EndInit();
             ResumeLayout(false);
         }
@@ -559,8 +561,8 @@
         private Panel panel1;
         private Label label1;
         private TabControl TabClientes;
-        private TabPage tabPage1;
         private TabPage tabPage2;
+        private TabPage tabPage1;
         private Label label2;
         private TextBox TxtEmail;
         private Label label4;

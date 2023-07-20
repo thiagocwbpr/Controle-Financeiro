@@ -80,6 +80,8 @@ namespace Controle_de_Vendas.br.com.projeto.dao
 
                 MessageBox.Show("Cliente cadastrado com sucesso!");
 
+                conexao.Close();
+
             }
             catch (Exception erro)
             {
@@ -94,16 +96,16 @@ namespace Controle_de_Vendas.br.com.projeto.dao
             try
             {
                 // Criando o DataTable e o comando SQL
-                DataTable TabelaCliente = new DataTable();
+                DataTable TabelaCliente = new DataTable(); // DataTable representa uma tabela SQL.
 
-                string sql = @"SELECT * FROM tb_clientes";
+                string sql = @"SELECT * FROM tb_clientes"; // string contendo o comando SQL.
                 
                 // Organizando o comando sql e execução.
 
-                MySqlCommand ExecuteCmd = new MySqlCommand(sql,conexao);
+                MySqlCommand ExecuteCmd = new MySqlCommand(sql,conexao); // executa o comando SQL retornando as info do BD.
 
                 conexao.Open();
-                ExecuteCmd.ExecuteNonQuery();
+                ExecuteCmd.ExecuteNonQuery(); // retorna um conjunto de resultado, como o SELECT em SQL.
 
                 // Criando o MySqlDataAdapter para preencher os dados no DataTable.
 
@@ -111,7 +113,11 @@ namespace Controle_de_Vendas.br.com.projeto.dao
 
                 da.Fill(TabelaCliente);
 
+                conexao.Close();
+
                 return TabelaCliente;
+
+                
 
             }
             catch (Exception erro)
@@ -127,7 +133,7 @@ namespace Controle_de_Vendas.br.com.projeto.dao
         {
             try
             {
-                string sql = @"UPDATE tb_clientes SET(
+                string sql = @"UPDATE tb_clientes SET
                                nome=@nome,
                                rg=@rg,
                                cpf=@cpf,
@@ -140,8 +146,8 @@ namespace Controle_de_Vendas.br.com.projeto.dao
                                complemento=@complemento,
                                bairro=@bairro,
                                cidade=@cidade,
-                               estado=@estado)
-                                    WHERE id=@id";
+                               estado=@estado
+                                    WHERE id=@id"; // O editar esta utilizando o WHERE ID. No Cliente é TextCodigo.
 
                 // Organizando o comando SQL com a classe clientes.
 
@@ -168,6 +174,8 @@ namespace Controle_de_Vendas.br.com.projeto.dao
                 ExecutaCmd.ExecuteNonQuery();
 
                 MessageBox.Show("Dados alterados com sucesso!");
+
+                conexao.Close();
 
             }
             catch (Exception erro)
@@ -197,6 +205,8 @@ namespace Controle_de_Vendas.br.com.projeto.dao
                 ExecutaCmd.ExecuteNonQuery();
 
                 MessageBox.Show("Dados excluídos com sucesso!");
+
+                conexao.Close();
 
             }
             catch (Exception erro)

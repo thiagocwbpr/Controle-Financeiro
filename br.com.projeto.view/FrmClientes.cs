@@ -29,7 +29,7 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
         }
 
-        private void BtnSalvar_Click(object sender, EventArgs e)
+        private void BtnSalvar_Click(object sender, EventArgs e) // Responsável por 'Cadastrar' os clientes no banco.
         {
             // Receber os dados dentro de um objeto modelo cliente
 
@@ -53,6 +53,8 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
             ClienteDAO dao = new ClienteDAO();
             dao.CadastrarCliente(obj);
+            tabPage1.Refresh();
+            
 
         }
 
@@ -101,6 +103,53 @@ namespace Controle_de_Vendas.br.com.projeto.view
             TxtBairro.Text = TabelaCliente.CurrentRow.Cells[11].Value.ToString();
             TxtCidade.Text = TabelaCliente.CurrentRow.Cells[12].Value.ToString();
             CbUf.Text = TabelaCliente.CurrentRow.Cells[13].Value.ToString();
+
+            // Alterar para a guia de Dados Pessoais
+
+            TabClientes.SelectedTab = tabPage1; // <-- Quando selecionar a pessoa na consulta, vai para a pagina de cadastro.
+
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            // Método responsável por exclusão dos dados do cliente cadastrado.
+
+            Cliente obj = new Cliente();
+            obj.Id = int.Parse(TxtCodigo.Text);
+
+            ClienteDAO dao = new ClienteDAO();
+
+            dao.ExcluirCliente(obj);
+
+            TabelaCliente.DataSource = dao.ListarClientes();
+
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            Cliente obj = new Cliente();
+
+            obj.Id = int.Parse(TxtCodigo.Text); // Os dados do cliente serão alterados pelo ID. Conforme Método Alterar.
+            obj.Nome = TxtNome.Text;
+            obj.Rg = TxtRg.Text;
+            obj.Cpf = TxtCpf.Text;
+            obj.Email = TxtEmail.Text;
+            obj.Telefone = TxtTelefone.Text;
+            obj.Celular = TxtCelular.Text;
+            obj.Cep = TxtCep.Text;
+            obj.Endereco = TxtEndereco.Text;
+            obj.Numero = int.Parse(TxtNumero.Text);
+            obj.Complemento = TxtComp.Text;
+            obj.Bairro = TxtBairro.Text;
+            obj.Cidade = TxtCidade.Text;
+            obj.Uf = CbUf.Text;
+
+            // Criando objeto da classe ClienteDAO e chamar o metodo cadastrar
+
+            ClienteDAO dao = new ClienteDAO();
+            dao.AlterarCliente(obj);
+
+            TabelaCliente.DataSource = dao.ListarClientes();
         }
     }
 }
