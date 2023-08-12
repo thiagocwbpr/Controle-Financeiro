@@ -53,8 +53,9 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
             ClienteDAO dao = new ClienteDAO();
             dao.CadastrarCliente(obj);
-            tabPage1.Refresh();
-            
+
+            TabelaCliente.DataSource = dao.ListarClientes(); // Após cadastrar o cliente, é realizado um novo select no banco.
+
 
         }
 
@@ -150,6 +151,38 @@ namespace Controle_de_Vendas.br.com.projeto.view
             dao.AlterarCliente(obj);
 
             TabelaCliente.DataSource = dao.ListarClientes();
+        }
+
+        private void BtnPesquisar_Click(object sender, EventArgs e) // Botão pesquisar.
+        {
+            string nome = TxtPesquisa.Text;
+
+            ClienteDAO dao = new ClienteDAO();
+
+            TabelaCliente.DataSource = dao.BuscarNomeCliente(nome);
+
+
+            if (TabelaCliente.Rows.Count == 0)
+            {
+                TabelaCliente.DataSource = dao.ListarClientes();
+            }
+
+
+
+        }
+
+        private void TxtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtPesquisa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var nome = "%" + TxtPesquisa.Text + "%";
+
+            ClienteDAO dao = new ClienteDAO();
+
+            TabelaCliente.DataSource = dao.BuscarClientePorNome(nome);
         }
     }
 }

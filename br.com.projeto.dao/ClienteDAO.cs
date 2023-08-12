@@ -104,14 +104,14 @@ namespace Controle_de_Vendas.br.com.projeto.dao
 
                 MySqlCommand ExecuteCmd = new MySqlCommand(sql,conexao); // executa o comando SQL retornando as info do BD.
 
-                conexao.Open();
+                conexao.Open(); // Abrindo conexão com o banco de dados.
                 ExecuteCmd.ExecuteNonQuery(); // retorna um conjunto de resultado, como o SELECT em SQL.
 
                 // Criando o MySqlDataAdapter para preencher os dados no DataTable.
 
-                MySqlDataAdapter da = new MySqlDataAdapter(ExecuteCmd);
+                MySqlDataAdapter da = new MySqlDataAdapter(ExecuteCmd); // Usado para preencher um DataSet(Conjunto de Dados). Cria uma ponte entre BD e DataSet.
 
-                da.Fill(TabelaCliente);
+                da.Fill(TabelaCliente); // Preenche o DataSet(Conjunto de dados, colunas, linhas, relacionamentos) 
 
                 conexao.Close();
 
@@ -128,6 +128,77 @@ namespace Controle_de_Vendas.br.com.projeto.dao
             return null;
         }
 
+        //Buscar cliente por nome
+
+        public DataTable BuscarNomeCliente(string nome)
+        {
+            try
+            {
+                DataTable TabelaCliente = new DataTable(); // Cria tabela em memoria.
+
+                string sql = @"SELECT *   
+	                            FROM tb_clientes
+                                        WHERE nome = @nome"; // Query SQL.
+
+                MySqlCommand ExecuteCmd = new MySqlCommand(sql,conexao); // Envia requisição de conexão e query.
+
+                conexao.Open();
+                ExecuteCmd.Parameters.AddWithValue("@nome", nome); // Adiciona os parametros 
+
+                ExecuteCmd.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(ExecuteCmd);
+
+                da.Fill(TabelaCliente);
+
+                conexao.Close();
+
+                return TabelaCliente;
+
+              
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Não foi possivel realizar a consulta! " + erro);
+            }
+            return null;
+        }
+
+        public DataTable BuscarClientePorNome(string nome)
+        {
+            try
+            {
+                DataTable TabelaCliente = new DataTable(); // Cria tabela em memoria.
+
+                string sql = @"SELECT *   
+	                            FROM tb_clientes
+                                        WHERE nome LIKE @nome"; // Query SQL.
+
+                MySqlCommand ExecuteCmd = new MySqlCommand(sql, conexao); // Envia requisição de conexão e query.
+
+                conexao.Open();
+                ExecuteCmd.Parameters.AddWithValue("@nome", nome); // Adiciona os parametros 
+
+                ExecuteCmd.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(ExecuteCmd);
+
+                da.Fill(TabelaCliente);
+
+                conexao.Close();
+
+                return TabelaCliente;
+
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Não foi possivel realizar a consulta! " + erro);
+            }
+            return null;
+        }
         // Metodo AlterarCliente
         public void AlterarCliente(Cliente obj)
         {
