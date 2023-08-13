@@ -184,5 +184,33 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
             TabelaCliente.DataSource = dao.BuscarClientePorNome(nome);
         }
+
+        private void btnPesquisarCep_Click(object sender, EventArgs e)
+        {
+            // botão consultar CEP.
+
+            try
+            {
+               // Implementação da API ViaCEP para consulta de CEP.
+                string cep = TxtCep.Text;
+                string xml = $"https://viacep.com.br/ws/{cep}/xml/";
+
+                DataSet dados = new DataSet();
+
+                dados.ReadXml(xml);
+
+                TxtEndereco.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+                TxtComp.Text = dados.Tables[0].Rows[0]["complemento"].ToString();
+                TxtBairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
+                TxtCidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                CbUf.Text = dados.Tables[0].Rows[0]["uf"].ToString();
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Endereço não encontrado. Por favor digite manualmente.");
+            }
+        }
     }
 }

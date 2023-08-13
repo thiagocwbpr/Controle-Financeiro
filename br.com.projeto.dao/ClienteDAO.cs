@@ -173,7 +173,7 @@ namespace Controle_de_Vendas.br.com.projeto.dao
 
                 string sql = @"SELECT *   
 	                            FROM tb_clientes
-                                        WHERE nome LIKE @nome"; // Query SQL.
+                                        WHERE nome LIKE @nome"; // Query SQL usando LIKE para busca.
 
                 MySqlCommand ExecuteCmd = new MySqlCommand(sql, conexao); // Envia requisição de conexão e query.
 

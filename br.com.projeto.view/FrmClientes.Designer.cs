@@ -32,6 +32,7 @@
             label1 = new Label();
             TabClientes = new TabControl();
             tabPage1 = new TabPage();
+            btnPesquisarCep = new Button();
             TxtCidade = new TextBox();
             label16 = new Label();
             CbUf = new ComboBox();
@@ -112,6 +113,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btnPesquisarCep);
             tabPage1.Controls.Add(TxtCidade);
             tabPage1.Controls.Add(label16);
             tabPage1.Controls.Add(CbUf);
@@ -148,6 +150,18 @@
             tabPage1.Text = "Dados Pessoais";
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage2_Click;
+            // 
+            // btnPesquisarCep
+            // 
+            btnPesquisarCep.BackColor = Color.Blue;
+            btnPesquisarCep.ForeColor = Color.White;
+            btnPesquisarCep.Location = new Point(672, 104);
+            btnPesquisarCep.Name = "btnPesquisarCep";
+            btnPesquisarCep.Size = new Size(96, 32);
+            btnPesquisarCep.TabIndex = 6;
+            btnPesquisarCep.Text = "Pesquisar";
+            btnPesquisarCep.UseVisualStyleBackColor = false;
+            btnPesquisarCep.Click += btnPesquisarCep_Click;
             // 
             // TxtCidade
             // 
@@ -256,7 +270,6 @@
             // TxtCep
             // 
             TxtCep.Location = new Point(685, 191);
-            TxtCep.Mask = "##.###.###";
             TxtCep.Name = "TxtCep";
             TxtCep.Size = new Size(98, 26);
             TxtCep.TabIndex = 15;
@@ -579,5 +592,6 @@
         private Label label15;
         private TextBox TxtCidade;
         private Label label16;
+        private Button btnPesquisarCep;
     }
 }
