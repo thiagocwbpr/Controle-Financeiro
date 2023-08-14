@@ -199,6 +199,8 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
                 dados.ReadXml(xml);
 
+                // Estrutura de conexão entre a interface gráfica e a API.
+
                 TxtEndereco.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
                 TxtComp.Text = dados.Tables[0].Rows[0]["complemento"].ToString();
                 TxtBairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
