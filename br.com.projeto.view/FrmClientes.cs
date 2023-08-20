@@ -61,7 +61,7 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
         private void BtnNovo_Click(object sender, EventArgs e)
         {
-            new Helpers().Limpar(this);
+            
         }
 
         private void TabelaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -191,7 +191,7 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
             try
             {
-               // Implementação da API ViaCEP para consulta de CEP.
+                // Implementação da API ViaCEP para consulta de CEP.
                 string cep = TxtCep.Text;
                 string xml = $"https://viacep.com.br/ws/{cep}/xml/";
 
