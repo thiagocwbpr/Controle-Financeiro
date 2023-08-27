@@ -155,11 +155,9 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
         private void BtnPesquisar_Click(object sender, EventArgs e) // Botão pesquisar.
         {
-            string nome = TxtPesquisa.Text;
-
             ClienteDAO dao = new ClienteDAO();
 
-            TabelaCliente.DataSource = dao.BuscarNomeCliente(nome);
+            TabelaCliente.DataSource = dao.ListarClientes();
 
 
             if (TabelaCliente.Rows.Count == 0)

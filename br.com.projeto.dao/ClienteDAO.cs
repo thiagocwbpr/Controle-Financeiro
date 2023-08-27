@@ -116,9 +116,6 @@ namespace Controle_de_Vendas.br.com.projeto.dao
                 conexao.Close();
 
                 return TabelaCliente;
-
-                
-
             }
             catch (Exception erro)
             {
@@ -129,7 +126,6 @@ namespace Controle_de_Vendas.br.com.projeto.dao
         }
 
         //Buscar cliente por nome
-
         public DataTable BuscarNomeCliente(string nome)
         {
             try

@@ -3,6 +3,7 @@ using Controle_de_Vendas.br.com.projeto.model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,9 @@ namespace Controle_de_Vendas.br.com.projeto.dao
     
     public class FuncionarioDAO
     {
-        private MySqlConnection conexao;
+        private MySqlConnection conexao; // Cria a conexão com o banco de dados.
 
-        public FuncionarioDAO() // Construtor
+        public FuncionarioDAO() // Construtor para a conexao.
         {
             this.conexao = new ConnectionFactory().GetConnection();
         }
@@ -84,12 +85,80 @@ namespace Controle_de_Vendas.br.com.projeto.dao
 
                 ExecutaCmd.ExecuteNonQuery();
 
+                MessageBox.Show("Funcionário cadastrado com sucesso!");
+
                 conexao.Close();
             }
             catch (Exception erro)
             {
 
                 MessageBox.Show("Ocorreu um erro " + erro);
+            }
+        }
+
+        public DataTable ListarFuncionario()
+        {
+            try
+            {
+                DataTable TabelaFuncionario = new DataTable();
+
+                var sql = @"SELECT * FROM tb_funcionarios";
+
+                MySqlCommand ExecuteCmd = new MySqlCommand(sql, conexao);
+
+                conexao.Open();
+
+                ExecuteCmd.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(ExecuteCmd);
+
+                da.Fill(TabelaFuncionario);
+
+                conexao.Close();
+
+                return TabelaFuncionario;
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Não foi possivel consultar os dados " + erro);
+            }
+
+            return null;
+        }
+
+        public DataTable BuscarNomeFuncionario(string nome)
+        {
+            try
+            {
+                DataTable TabelaFuncionario = new DataTable();
+
+                var sql = @"SELECT * 
+                                FROM tb_funcionarios 
+                                            WHERE nome = @nome";
+
+                MySqlCommand ExecuteCmd = new MySqlCommand(sql,conexao);
+
+                conexao.Open();
+
+                ExecuteCmd.Parameters.AddWithValue("@nome",nome);
+
+                ExecuteCmd.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(ExecuteCmd);
+
+                da.Fill(TabelaFuncionario);
+
+                conexao.Close();
+
+                return TabelaFuncionario;
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Não foi possivel buscar o nome! " +  erro);
+
+                return null;
             }
         }
     }

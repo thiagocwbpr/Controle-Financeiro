@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controle_de_Vendas.br.com.projeto.dao;
+using Controle_de_Vendas.br.com.projeto.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +27,9 @@ namespace Controle_de_Vendas.br.com.projeto.view
         private void BtnPesquisa_Click(object sender, EventArgs e)
         {
 
+            FuncionarioDAO dao = new FuncionarioDAO();
+
+            TabelaFuncionario.DataSource = dao.ListarFuncionario();
         }
 
         private void TxtPesquisa_TextChanged(object sender, EventArgs e)
@@ -32,10 +37,7 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
         }
 
-        private void TabelaFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void TxtCodigo_TextChanged(object sender, EventArgs e)
         {
@@ -129,6 +131,28 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
+            Funcionario obj = new Funcionario();
+
+            obj.Nome = TxtNome.Text;
+            obj.Rg = TxtRg.Text;
+            obj.Cpf = TxtCpf.Text;
+            obj.Email = TxtEmail.Text;
+            obj.Telefone = TxtTelefone.Text;
+            obj.Celular = TxtCelular.Text;
+            obj.Cargo = CbCargo.SelectedItem.ToString();
+            obj.Senha = TxtSenha.Text;
+            obj.Cep = TxtCep.Text;
+            obj.Endereco = TxtEndereco.Text;
+            obj.Numero = int.Parse(TxtNumero.Text);
+            obj.Complemento = TxtComp.Text;
+            obj.Bairro = TxtBairro.Text;
+            obj.Cidade = TxtCidade.Text;
+            obj.Uf = CbUf.SelectedItem.ToString();
+            obj.Nivel_Acesso = CbNivelAcesso.SelectedItem.ToString();
+
+            FuncionarioDAO dao = new FuncionarioDAO();
+
+            dao.CadastrarFuncionario(obj);
 
         }
 
@@ -140,6 +164,18 @@ namespace Controle_de_Vendas.br.com.projeto.view
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmFuncionario_Load(object sender, EventArgs e)
+        {
+            FuncionarioDAO dao = new FuncionarioDAO();
+
+            TabelaFuncionario.DataSource = dao.ListarFuncionario();
         }
     }
 }

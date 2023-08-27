@@ -31,8 +31,13 @@
             panel1 = new Panel();
             label1 = new Label();
             TabFuncionarios = new TabControl();
-            tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            CbNivelAcesso = new ComboBox();
+            label18 = new Label();
+            TxtSenha = new TextBox();
+            label17 = new Label();
+            CbCargo = new ComboBox();
+            label15 = new Label();
             btnPesquisarCep = new Button();
             TxtCidade = new TextBox();
             label16 = new Label();
@@ -62,24 +67,19 @@
             label3 = new Label();
             TxtCodigo = new TextBox();
             label2 = new Label();
-            label15 = new Label();
-            CbCargo = new ComboBox();
-            label17 = new Label();
-            TxtSenha = new TextBox();
-            label18 = new Label();
-            CbNivelAcesso = new ComboBox();
-            TabelaFuncionario = new DataGridView();
-            label19 = new Label();
-            TxtPesquisa = new TextBox();
+            tabPage1 = new TabPage();
             BtnPesquisa = new Button();
+            TxtPesquisa = new TextBox();
+            label19 = new Label();
+            TabelaFuncionario = new DataGridView();
             BtnExcluir = new Button();
             BtnEditar = new Button();
             BtnSalvar = new Button();
             BtnNovo = new Button();
             panel1.SuspendLayout();
             TabFuncionarios.SuspendLayout();
-            tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TabelaFuncionario).BeginInit();
             SuspendLayout();
             // 
@@ -115,19 +115,6 @@
             TabFuncionarios.SelectedIndex = 0;
             TabFuncionarios.Size = new Size(900, 344);
             TabFuncionarios.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            tabPage1.Controls.Add(BtnPesquisa);
-            tabPage1.Controls.Add(TxtPesquisa);
-            tabPage1.Controls.Add(label19);
-            tabPage1.Controls.Add(TabelaFuncionario);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(892, 311);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Consulta";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -172,6 +159,67 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Dados Pessoais";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // CbNivelAcesso
+            // 
+            CbNivelAcesso.FormattingEnabled = true;
+            CbNivelAcesso.Items.AddRange(new object[] { "Administrador", "Usuário" });
+            CbNivelAcesso.Location = new Point(428, 275);
+            CbNivelAcesso.Name = "CbNivelAcesso";
+            CbNivelAcesso.Size = new Size(151, 28);
+            CbNivelAcesso.TabIndex = 62;
+            CbNivelAcesso.SelectedIndexChanged += CbNivelAcesso_SelectedIndexChanged;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.ForeColor = SystemColors.Highlight;
+            label18.Location = new Point(290, 278);
+            label18.Name = "label18";
+            label18.Size = new Size(131, 20);
+            label18.TabIndex = 61;
+            label18.Text = "Nível de Acesso:";
+            // 
+            // TxtSenha
+            // 
+            TxtSenha.Location = new Point(86, 278);
+            TxtSenha.Name = "TxtSenha";
+            TxtSenha.PasswordChar = '*';
+            TxtSenha.Size = new Size(157, 26);
+            TxtSenha.TabIndex = 60;
+            TxtSenha.TextChanged += TxtSenha_TextChanged;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.ForeColor = SystemColors.Highlight;
+            label17.Location = new Point(11, 278);
+            label17.Name = "label17";
+            label17.Size = new Size(58, 20);
+            label17.TabIndex = 59;
+            label17.Text = "Senha:";
+            // 
+            // CbCargo
+            // 
+            CbCargo.AccessibleName = "";
+            CbCargo.FormattingEnabled = true;
+            CbCargo.Items.AddRange(new object[] { "Gerente", "Vendedor", "Estagiário" });
+            CbCargo.Location = new Point(86, 243);
+            CbCargo.Name = "CbCargo";
+            CbCargo.Size = new Size(157, 28);
+            CbCargo.TabIndex = 58;
+            CbCargo.SelectedIndexChanged += CbCargo_SelectedIndexChanged;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.ForeColor = SystemColors.Highlight;
+            label15.Location = new Point(8, 246);
+            label15.Name = "label15";
+            label15.Size = new Size(60, 20);
+            label15.TabIndex = 57;
+            label15.Text = "Cargo:";
+            label15.Click += label15_Click;
             // 
             // btnPesquisarCep
             // 
@@ -475,95 +523,19 @@
             label2.TabIndex = 28;
             label2.Text = "Código:";
             // 
-            // label15
+            // tabPage1
             // 
-            label15.AutoSize = true;
-            label15.ForeColor = SystemColors.Highlight;
-            label15.Location = new Point(8, 246);
-            label15.Name = "label15";
-            label15.Size = new Size(60, 20);
-            label15.TabIndex = 57;
-            label15.Text = "Cargo:";
-            label15.Click += label15_Click;
-            // 
-            // CbCargo
-            // 
-            CbCargo.AccessibleName = "";
-            CbCargo.FormattingEnabled = true;
-            CbCargo.Items.AddRange(new object[] { "Gerente", "Vendedor", "Estagiário" });
-            CbCargo.Location = new Point(86, 243);
-            CbCargo.Name = "CbCargo";
-            CbCargo.Size = new Size(157, 28);
-            CbCargo.TabIndex = 58;
-            CbCargo.SelectedIndexChanged += CbCargo_SelectedIndexChanged;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.ForeColor = SystemColors.Highlight;
-            label17.Location = new Point(11, 278);
-            label17.Name = "label17";
-            label17.Size = new Size(58, 20);
-            label17.TabIndex = 59;
-            label17.Text = "Senha:";
-            // 
-            // TxtSenha
-            // 
-            TxtSenha.Location = new Point(86, 278);
-            TxtSenha.Name = "TxtSenha";
-            TxtSenha.PasswordChar = '*';
-            TxtSenha.Size = new Size(157, 26);
-            TxtSenha.TabIndex = 60;
-            TxtSenha.TextChanged += TxtSenha_TextChanged;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.ForeColor = SystemColors.Highlight;
-            label18.Location = new Point(290, 278);
-            label18.Name = "label18";
-            label18.Size = new Size(131, 20);
-            label18.TabIndex = 61;
-            label18.Text = "Nível de Acesso:";
-            // 
-            // CbNivelAcesso
-            // 
-            CbNivelAcesso.FormattingEnabled = true;
-            CbNivelAcesso.Items.AddRange(new object[] { "Administrador", "Usuário" });
-            CbNivelAcesso.Location = new Point(428, 275);
-            CbNivelAcesso.Name = "CbNivelAcesso";
-            CbNivelAcesso.Size = new Size(151, 28);
-            CbNivelAcesso.TabIndex = 62;
-            CbNivelAcesso.SelectedIndexChanged += CbNivelAcesso_SelectedIndexChanged;
-            // 
-            // TabelaFuncionario
-            // 
-            TabelaFuncionario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TabelaFuncionario.Location = new Point(8, 92);
-            TabelaFuncionario.Name = "TabelaFuncionario";
-            TabelaFuncionario.RowHeadersWidth = 51;
-            TabelaFuncionario.RowTemplate.Height = 29;
-            TabelaFuncionario.Size = new Size(876, 216);
-            TabelaFuncionario.TabIndex = 0;
-            TabelaFuncionario.CellContentClick += TabelaFuncionario_CellContentClick;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.ForeColor = SystemColors.Highlight;
-            label19.Location = new Point(28, 23);
-            label19.Name = "label19";
-            label19.Size = new Size(57, 20);
-            label19.TabIndex = 1;
-            label19.Text = "Nome:";
-            // 
-            // TxtPesquisa
-            // 
-            TxtPesquisa.Location = new Point(91, 20);
-            TxtPesquisa.Name = "TxtPesquisa";
-            TxtPesquisa.Size = new Size(428, 26);
-            TxtPesquisa.TabIndex = 2;
-            TxtPesquisa.TextChanged += TxtPesquisa_TextChanged;
+            tabPage1.Controls.Add(BtnPesquisa);
+            tabPage1.Controls.Add(TxtPesquisa);
+            tabPage1.Controls.Add(label19);
+            tabPage1.Controls.Add(TabelaFuncionario);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Size = new Size(892, 311);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Consulta";
+            tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
             // 
             // BtnPesquisa
             // 
@@ -576,6 +548,34 @@
             BtnPesquisa.Text = "Pesquisar";
             BtnPesquisa.UseVisualStyleBackColor = false;
             BtnPesquisa.Click += BtnPesquisa_Click;
+            // 
+            // TxtPesquisa
+            // 
+            TxtPesquisa.Location = new Point(91, 20);
+            TxtPesquisa.Name = "TxtPesquisa";
+            TxtPesquisa.Size = new Size(428, 26);
+            TxtPesquisa.TabIndex = 2;
+            TxtPesquisa.TextChanged += TxtPesquisa_TextChanged;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.ForeColor = SystemColors.Highlight;
+            label19.Location = new Point(28, 23);
+            label19.Name = "label19";
+            label19.Size = new Size(57, 20);
+            label19.TabIndex = 1;
+            label19.Text = "Nome:";
+            // 
+            // TabelaFuncionario
+            // 
+            TabelaFuncionario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TabelaFuncionario.Location = new Point(8, 92);
+            TabelaFuncionario.Name = "TabelaFuncionario";
+            TabelaFuncionario.RowHeadersWidth = 51;
+            TabelaFuncionario.RowTemplate.Height = 29;
+            TabelaFuncionario.Size = new Size(876, 216);
+            TabelaFuncionario.TabIndex = 0;
             // 
             // BtnExcluir
             // 
@@ -642,13 +642,14 @@
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FrmFuncionario";
             Text = "FrmFuncionario";
+            Load += FrmFuncionario_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             TabFuncionarios.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)TabelaFuncionario).EndInit();
             ResumeLayout(false);
         }
