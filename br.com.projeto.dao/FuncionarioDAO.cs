@@ -96,6 +96,92 @@ namespace Controle_de_Vendas.br.com.projeto.dao
             }
         }
 
+        public void AlterarFuncionario(Funcionario obj)
+        {
+            try
+            {
+                var sql = @"UPDATE tb_funcionarios SET 
+                                   nome=@nome
+                                  ,rg=@rg
+                                  ,cpf=@cpf
+                                  ,email=@email
+                                  ,senha=@senha
+                                  ,cargo=@cargo
+                                  ,nivel_acesso=@nivel_acesso
+                                  ,telefone=@telefone
+                                  ,celular=@celular
+                                  ,cep=@cep
+                                  ,endereco=@endereco
+                                  ,numero=@numero
+                                  ,complemento=@complemento
+                                  ,bairro=@bairro
+                                  ,cidade=@cidade
+                                  ,estado=@estado
+                                        WHERE id=@id";
+
+                MySqlCommand ExecuteCmd = new MySqlCommand(sql,conexao);
+
+                ExecuteCmd.Parameters.AddWithValue("@id", obj.Id);
+                ExecuteCmd.Parameters.AddWithValue("@nome", obj.Nome);
+                ExecuteCmd.Parameters.AddWithValue("@rg", obj.Rg);
+                ExecuteCmd.Parameters.AddWithValue("@cpf", obj.Cpf);
+                ExecuteCmd.Parameters.AddWithValue("@email", obj.Email);
+                ExecuteCmd.Parameters.AddWithValue("@senha", obj.Senha);
+                ExecuteCmd.Parameters.AddWithValue("@cargo", obj.Cargo);
+                ExecuteCmd.Parameters.AddWithValue("@nivel_acesso", obj.Nivel_Acesso);
+                ExecuteCmd.Parameters.AddWithValue("@telefone", obj.Telefone);
+                ExecuteCmd.Parameters.AddWithValue("@celular", obj.Celular);
+                ExecuteCmd.Parameters.AddWithValue("@cep", obj.Cep);
+                ExecuteCmd.Parameters.AddWithValue("@endereco", obj.Endereco);
+                ExecuteCmd.Parameters.AddWithValue("@numero", obj.Numero);
+                ExecuteCmd.Parameters.AddWithValue("@complemento", obj.Complemento);
+                ExecuteCmd.Parameters.AddWithValue("@bairro", obj.Bairro);
+                ExecuteCmd.Parameters.AddWithValue("@cidade", obj.Cidade);
+                ExecuteCmd.Parameters.AddWithValue("@estado", obj.Uf);
+
+                conexao.Open();
+
+                ExecuteCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Dados alterados com sucesso! ");
+
+                conexao.Close();
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Dados não foram alterados! " + erro);
+            }
+        }
+
+        public void ExcluirFuncionario(Funcionario obj)
+        {
+            try
+            {
+                var sql = @"DELETE FROM tb_funcionarios
+                            WHERE id = @id";
+
+                MySqlCommand ExecuteCmd = new MySqlCommand(sql, conexao);
+
+                ExecuteCmd.Parameters.AddWithValue("@id", obj.Id);
+
+                conexao.Open();
+
+                ExecuteCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Usuário removido com sucesso!");
+
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Falha ao remover usuário! " + erro);
+            }
+                       
+        }
+
         public DataTable ListarFuncionario()
         {
             try
@@ -135,7 +221,7 @@ namespace Controle_de_Vendas.br.com.projeto.dao
 
                 var sql = @"SELECT * 
                                 FROM tb_funcionarios 
-                                            WHERE nome = @nome";
+                                            WHERE nome LIKE @nome";
 
                 MySqlCommand ExecuteCmd = new MySqlCommand(sql,conexao);
 

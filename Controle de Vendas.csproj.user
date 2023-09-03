@@ -4,6 +4,9 @@
     <Compile Update="br.com.projeto.view\FrmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="br.com.projeto.view\FrmFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="br.com.projeto.view\FrmFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>

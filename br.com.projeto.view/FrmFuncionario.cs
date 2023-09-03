@@ -29,11 +29,24 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
             FuncionarioDAO dao = new FuncionarioDAO();
 
-            TabelaFuncionario.DataSource = dao.ListarFuncionario();
+            TabFuncionario.DataSource = dao.ListarFuncionario();
+
+            if (TabFuncionario.Rows.Count == 0 || TxtPesquisa.Text == string.Empty)
+            {
+                MessageBox.Show("Funcionário não encontrado!");
+
+                TabFuncionario.DataSource = dao.ListarFuncionario();
+            }
         }
 
         private void TxtPesquisa_TextChanged(object sender, EventArgs e)
         {
+
+            var nome = "%" + TxtPesquisa.Text + "%";
+
+            FuncionarioDAO dao = new FuncionarioDAO();
+            TabFuncionario.DataSource = dao.BuscarNomeFuncionario(nome);
+
 
         }
 
@@ -91,7 +104,26 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
         private void btnPesquisarCep_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var cep = TxtCep.Text;
+                var xml = $"https://viacep.com.br/ws/{cep}/xml/";
 
+                DataSet dados = new DataSet();
+
+                dados.ReadXml(xml);
+
+                TxtEndereco.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+                TxtComp.Text = dados.Tables[0].Rows[0]["complemento"].ToString();
+                TxtBairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
+                TxtCidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                CbUf.Text = dados.Tables[0].Rows[0]["uf"].ToString();
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Não foi possível consultar CEP" + erro);
+            }
         }
 
         private void TxtEndereco_TextChanged(object sender, EventArgs e)
@@ -154,16 +186,50 @@ namespace Controle_de_Vendas.br.com.projeto.view
 
             dao.CadastrarFuncionario(obj);
 
+            TabFuncionario.DataSource = dao.ListarFuncionario();
+
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
+            Funcionario obj = new Funcionario();
 
+            obj.Id = int.Parse(TxtCodigo.Text);
+            obj.Nome = TxtNome.Text;
+            obj.Rg = TxtRg.Text;
+            obj.Cpf = TxtCpf.Text;
+            obj.Email = TxtEmail.Text;
+            obj.Telefone = TxtTelefone.Text;
+            obj.Celular = TxtCelular.Text;
+            obj.Cargo = CbCargo.SelectedItem.ToString();
+            obj.Senha = TxtSenha.Text;
+            obj.Cep = TxtCep.Text;
+            obj.Endereco = TxtEndereco.Text;
+            obj.Numero = int.Parse(TxtNumero.Text);
+            obj.Complemento = TxtComp.Text;
+            obj.Bairro = TxtBairro.Text;
+            obj.Cidade = TxtCidade.Text;
+            obj.Uf = CbUf.SelectedItem.ToString();
+            obj.Nivel_Acesso = CbNivelAcesso.SelectedItem.ToString();
+
+            FuncionarioDAO dao = new FuncionarioDAO();
+
+            dao.AlterarFuncionario(obj);
+
+            TabFuncionario.DataSource = dao.ListarFuncionario(); // atualiza o datagridview (atualiza a tabela)
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
+            Funcionario obj = new Funcionario();
 
+            obj.Id = int.Parse(TxtCodigo.Text);
+
+            FuncionarioDAO dao = new FuncionarioDAO();
+
+            dao.ExcluirFuncionario(obj);
+
+            TabFuncionario.DataSource = dao.ListarFuncionario(); // atualiza o datagridview (atualiza a tabela)
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -175,7 +241,35 @@ namespace Controle_de_Vendas.br.com.projeto.view
         {
             FuncionarioDAO dao = new FuncionarioDAO();
 
-            TabelaFuncionario.DataSource = dao.ListarFuncionario();
+            TabFuncionario.DataSource = dao.ListarFuncionario();
+        }
+
+        private void TabFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TxtCodigo.Text = TabFuncionario.CurrentRow.Cells[0].Value.ToString();
+            TxtNome.Text = TabFuncionario.CurrentRow.Cells[1].Value.ToString();
+            TxtRg.Text = TabFuncionario.CurrentRow.Cells[2].Value.ToString();
+            TxtCpf.Text = TabFuncionario.CurrentRow.Cells[3].Value.ToString();
+            TxtEmail.Text = TabFuncionario.CurrentRow.Cells[4].Value.ToString();
+            TxtSenha.Text = TabFuncionario.CurrentRow.Cells[5].Value.ToString();
+            CbCargo.Text = TabFuncionario.CurrentRow.Cells[6].Value.ToString();
+            CbNivelAcesso.Text = TabFuncionario.CurrentRow.Cells[7].Value.ToString();
+            TxtTelefone.Text = TabFuncionario.CurrentRow.Cells[8].Value.ToString();
+            TxtCelular.Text = TabFuncionario.CurrentRow.Cells[9].Value.ToString();
+            TxtCep.Text = TabFuncionario.CurrentRow.Cells[10].Value.ToString();
+            TxtEndereco.Text = TabFuncionario.CurrentRow.Cells[11].Value.ToString();
+            TxtNumero.Text = TabFuncionario.CurrentRow.Cells[12].Value.ToString();
+            TxtComp.Text = TabFuncionario.CurrentRow.Cells[13].Value.ToString();
+            TxtBairro.Text = TabFuncionario.CurrentRow.Cells[14].Value.ToString();
+            TxtCidade.Text = TabFuncionario.CurrentRow.Cells[15].Value.ToString();
+            CbUf.Text = TabFuncionario.CurrentRow.Cells[16].Value.ToString();
+
+            TabelaFuncionarios.SelectedTab = tabPage2;
+        }
+
+        private void BtnNovo_Click(object sender, EventArgs e)
+        {
+            new Helpers().Limpar(this);
         }
     }
 }

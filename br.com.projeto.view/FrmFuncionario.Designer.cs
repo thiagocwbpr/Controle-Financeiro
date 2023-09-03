@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             label1 = new Label();
-            TabFuncionarios = new TabControl();
+            TabelaFuncionarios = new TabControl();
             tabPage2 = new TabPage();
             CbNivelAcesso = new ComboBox();
             label18 = new Label();
@@ -71,16 +71,16 @@
             BtnPesquisa = new Button();
             TxtPesquisa = new TextBox();
             label19 = new Label();
-            TabelaFuncionario = new DataGridView();
+            TabFuncionario = new DataGridView();
             BtnExcluir = new Button();
             BtnEditar = new Button();
             BtnSalvar = new Button();
             BtnNovo = new Button();
             panel1.SuspendLayout();
-            TabFuncionarios.SuspendLayout();
+            TabelaFuncionarios.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)TabelaFuncionario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TabFuncionario).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -106,15 +106,15 @@
             label1.TabIndex = 0;
             label1.Text = "Cadastro de Funcionários";
             // 
-            // TabFuncionarios
+            // TabelaFuncionarios
             // 
-            TabFuncionarios.Controls.Add(tabPage2);
-            TabFuncionarios.Controls.Add(tabPage1);
-            TabFuncionarios.Location = new Point(0, 105);
-            TabFuncionarios.Name = "TabFuncionarios";
-            TabFuncionarios.SelectedIndex = 0;
-            TabFuncionarios.Size = new Size(900, 344);
-            TabFuncionarios.TabIndex = 1;
+            TabelaFuncionarios.Controls.Add(tabPage2);
+            TabelaFuncionarios.Controls.Add(tabPage1);
+            TabelaFuncionarios.Location = new Point(0, 105);
+            TabelaFuncionarios.Name = "TabelaFuncionarios";
+            TabelaFuncionarios.SelectedIndex = 0;
+            TabelaFuncionarios.Size = new Size(900, 344);
+            TabelaFuncionarios.TabIndex = 1;
             // 
             // tabPage2
             // 
@@ -528,7 +528,7 @@
             tabPage1.Controls.Add(BtnPesquisa);
             tabPage1.Controls.Add(TxtPesquisa);
             tabPage1.Controls.Add(label19);
-            tabPage1.Controls.Add(TabelaFuncionario);
+            tabPage1.Controls.Add(TabFuncionario);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Size = new Size(892, 311);
@@ -567,15 +567,16 @@
             label19.TabIndex = 1;
             label19.Text = "Nome:";
             // 
-            // TabelaFuncionario
+            // TabFuncionario
             // 
-            TabelaFuncionario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TabelaFuncionario.Location = new Point(8, 92);
-            TabelaFuncionario.Name = "TabelaFuncionario";
-            TabelaFuncionario.RowHeadersWidth = 51;
-            TabelaFuncionario.RowTemplate.Height = 29;
-            TabelaFuncionario.Size = new Size(876, 216);
-            TabelaFuncionario.TabIndex = 0;
+            TabFuncionario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TabFuncionario.Location = new Point(8, 92);
+            TabFuncionario.Name = "TabFuncionario";
+            TabFuncionario.RowHeadersWidth = 51;
+            TabFuncionario.RowTemplate.Height = 29;
+            TabFuncionario.Size = new Size(876, 216);
+            TabFuncionario.TabIndex = 0;
+            TabFuncionario.CellClick += TabFuncionario_CellClick;
             // 
             // BtnExcluir
             // 
@@ -627,6 +628,7 @@
             BtnNovo.TabIndex = 6;
             BtnNovo.Text = "Novo";
             BtnNovo.UseVisualStyleBackColor = false;
+            BtnNovo.Click += BtnNovo_Click;
             // 
             // FrmFuncionario
             // 
@@ -637,7 +639,7 @@
             Controls.Add(BtnEditar);
             Controls.Add(BtnSalvar);
             Controls.Add(BtnNovo);
-            Controls.Add(TabFuncionarios);
+            Controls.Add(TabelaFuncionarios);
             Controls.Add(panel1);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FrmFuncionario";
@@ -645,12 +647,12 @@
             Load += FrmFuncionario_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            TabFuncionarios.ResumeLayout(false);
+            TabelaFuncionarios.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)TabelaFuncionario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TabFuncionario).EndInit();
             ResumeLayout(false);
         }
 
@@ -658,7 +660,7 @@
 
         private Panel panel1;
         private Label label1;
-        private TabControl TabFuncionarios;
+        private TabControl TabelaFuncionarios;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private Button btnPesquisarCep;
@@ -696,7 +698,7 @@
         private Label label17;
         private ComboBox CbNivelAcesso;
         private Label label18;
-        private DataGridView TabelaFuncionario;
+        private DataGridView TabFuncionario;
         private TextBox TxtPesquisa;
         private Label label19;
         private Button BtnPesquisa;
