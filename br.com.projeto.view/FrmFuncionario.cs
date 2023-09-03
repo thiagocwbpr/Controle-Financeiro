@@ -271,5 +271,10 @@ namespace Controle_de_Vendas.br.com.projeto.view
         {
             new Helpers().Limpar(this);
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
