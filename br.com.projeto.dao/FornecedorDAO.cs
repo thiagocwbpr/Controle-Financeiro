@@ -74,6 +74,8 @@ namespace Controle_de_Vendas.br.com.projeto.dao
                 MessageBox.Show("Fornecedor cadastrado com sucesso!");
 
                 conexao.Close();
+
+                
             }
             catch (Exception erro)
             {
@@ -118,20 +120,21 @@ namespace Controle_de_Vendas.br.com.projeto.dao
         {
             try
             {
-                var sql = @"UPDATE tb_fornecedores SET 
-                            nome = @nome
-                           ,cnpj = @cnpj
-                           ,email = @email
-                           ,telefone = @telefone
-                           ,celular = @celular
-                           ,cep = @cep
-                           ,endereco = @endereco
-                           ,numero = @numero
-                           ,complemento = @complemento
-                           ,bairro = @bairro
-                           ,cidade = @cidade
-                           ,estado = @estado
-                                WHERE id = @id";
+                var sql = @"UPDATE tb_fornecedores SET
+                            id=@id
+                           ,nome=@nome
+                           ,cnpj=@cnpj
+                           ,email=@email
+                           ,telefone=@telefone
+                           ,celular=@celular
+                           ,cep=@cep
+                           ,endereco=@endereco
+                           ,numero=@numero
+                           ,complemento=@complemento
+                           ,bairro=@bairro
+                           ,cidade=@cidade
+                           ,estado=@estado
+                                WHERE id=@id";
 
                 MySqlCommand ExecuteCmd = new MySqlCommand(sql, conexao);
 
@@ -155,12 +158,73 @@ namespace Controle_de_Vendas.br.com.projeto.dao
 
                 MessageBox.Show("Dados do fornecedor alterados com sucesso!");
 
-            conexao.Close();
+                conexao.Close();
             }
             catch (Exception erro)
             {
 
                 MessageBox.Show("Dados do fornecedor não foram alterados! " + erro);
+            }
+        }
+
+        public DataTable BuscarNomeFornecedor(string nome)
+        {
+            try
+            {
+                DataTable TabelaFornecedor = new DataTable();
+
+                string sql = @"SELECT * 
+                                    FROM tb_fornecedores 
+                                                    WHERE nome LIKE @nome";
+                MySqlCommand ExecuteCmd = new MySqlCommand(sql, conexao);
+
+                conexao.Open();
+
+                ExecuteCmd.Parameters.AddWithValue("@nome", nome);
+
+                ExecuteCmd.ExecuteNonQuery();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(ExecuteCmd);
+
+                da.Fill(TabelaFornecedor);
+
+                conexao.Close();
+
+                return TabelaFornecedor;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Não foi possivel buscar o nome " + erro);
+
+                return null;
+            }
+
+            
+        }
+
+        public void ExcluirFornecedor(Fornecedores obj)
+        {
+            try
+            {
+                var sql = @"DELETE FROM tb_fornecedores WHERE id = @id";
+
+                MySqlCommand ExecuteCmd = new MySqlCommand(sql,conexao);
+
+                ExecuteCmd.Parameters.AddWithValue("@id", obj.Id);
+
+                conexao.Open();
+
+                ExecuteCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Fornecedor excluído com sucesso!");
+
+                conexao.Close();
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Não foi possivel excluir o fornecedor." + erro);
             }
         }
     }

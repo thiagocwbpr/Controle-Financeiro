@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             label1 = new Label();
-            TabelaFuncionarios = new TabControl();
+            TabelaFornecedores = new TabControl();
             tabPage2 = new TabPage();
             btnPesquisarCep = new Button();
             TxtCidade = new TextBox();
@@ -69,7 +69,7 @@
             BtnSalvar = new Button();
             BtnNovo = new Button();
             panel1.SuspendLayout();
-            TabelaFuncionarios.SuspendLayout();
+            TabelaFornecedores.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TabFornecedores).BeginInit();
@@ -99,15 +99,15 @@
             label1.Text = "Cadastro de Fornecedores";
             label1.Click += label1_Click;
             // 
-            // TabelaFuncionarios
+            // TabelaFornecedores
             // 
-            TabelaFuncionarios.Controls.Add(tabPage2);
-            TabelaFuncionarios.Controls.Add(tabPage1);
-            TabelaFuncionarios.Location = new Point(0, 105);
-            TabelaFuncionarios.Name = "TabelaFuncionarios";
-            TabelaFuncionarios.SelectedIndex = 0;
-            TabelaFuncionarios.Size = new Size(900, 344);
-            TabelaFuncionarios.TabIndex = 3;
+            TabelaFornecedores.Controls.Add(tabPage2);
+            TabelaFornecedores.Controls.Add(tabPage1);
+            TabelaFornecedores.Location = new Point(0, 105);
+            TabelaFornecedores.Name = "TabelaFornecedores";
+            TabelaFornecedores.SelectedIndex = 0;
+            TabelaFornecedores.Size = new Size(900, 344);
+            TabelaFornecedores.TabIndex = 3;
             // 
             // tabPage2
             // 
@@ -426,6 +426,7 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Consulta";
             tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
             // 
             // BtnPesquisa
             // 
@@ -437,6 +438,7 @@
             BtnPesquisa.TabIndex = 3;
             BtnPesquisa.Text = "Pesquisar";
             BtnPesquisa.UseVisualStyleBackColor = false;
+            BtnPesquisa.Click += BtnPesquisa_Click;
             // 
             // TxtPesquisa
             // 
@@ -444,6 +446,7 @@
             TxtPesquisa.Name = "TxtPesquisa";
             TxtPesquisa.Size = new Size(428, 26);
             TxtPesquisa.TabIndex = 2;
+            TxtPesquisa.TextChanged += TxtPesquisa_TextChanged;
             // 
             // label19
             // 
@@ -464,6 +467,8 @@
             TabFornecedores.RowTemplate.Height = 29;
             TabFornecedores.Size = new Size(876, 216);
             TabFornecedores.TabIndex = 0;
+            TabFornecedores.CellClick += TabFornecedores_CellClick;
+            TabFornecedores.CellContentClick += TabFornecedores_CellContentClick;
             // 
             // BtnExcluir
             // 
@@ -476,6 +481,7 @@
             BtnExcluir.TabIndex = 13;
             BtnExcluir.Text = "Excluir";
             BtnExcluir.UseVisualStyleBackColor = false;
+            BtnExcluir.Click += BtnExcluir_Click;
             // 
             // BtnEditar
             // 
@@ -525,7 +531,7 @@
             Controls.Add(BtnEditar);
             Controls.Add(BtnSalvar);
             Controls.Add(BtnNovo);
-            Controls.Add(TabelaFuncionarios);
+            Controls.Add(TabelaFornecedores);
             Controls.Add(panel1);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "FrmFornecedores";
@@ -533,7 +539,7 @@
             Load += FrmFornecedores_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            TabelaFuncionarios.ResumeLayout(false);
+            TabelaFornecedores.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabPage1.ResumeLayout(false);
@@ -546,7 +552,7 @@
 
         private Panel panel1;
         private Label label1;
-        private TabControl TabelaFuncionarios;
+        private TabControl TabelaFornecedores;
         private TabPage tabPage2;
         private Button btnPesquisarCep;
         private TextBox TxtCidade;

@@ -88,6 +88,7 @@ namespace Controle_de_Vendas.br.com.projeto.dao
                 MessageBox.Show("Funcionário cadastrado com sucesso!");
 
                 conexao.Close();
+
             }
             catch (Exception erro)
             {
