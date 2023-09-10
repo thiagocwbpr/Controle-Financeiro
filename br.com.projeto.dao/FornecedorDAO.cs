@@ -18,7 +18,6 @@ namespace Controle_de_Vendas.br.com.projeto.dao
         {
             this.conexao = new ConnectionFactory().GetConnection();
         }
-
         public void CadastrarFornecedor(Fornecedores obj)
         {
             try
@@ -74,7 +73,6 @@ namespace Controle_de_Vendas.br.com.projeto.dao
                 MessageBox.Show("Fornecedor cadastrado com sucesso!");
 
                 conexao.Close();
-
                 
             }
             catch (Exception erro)
@@ -82,9 +80,6 @@ namespace Controle_de_Vendas.br.com.projeto.dao
 
                 MessageBox.Show("Não foi possível cadastrar Fornecedor " + erro);
             }
-
-
-
         }
 
         public DataTable ListarFornecedor()

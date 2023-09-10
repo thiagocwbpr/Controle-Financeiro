@@ -201,6 +201,7 @@ namespace Controle_de_Vendas.br.com.projeto.dao
             try
             {
                 string sql = @"UPDATE tb_clientes SET
+                               id=@id,
                                nome=@nome,
                                rg=@rg,
                                cpf=@cpf,
