@@ -35,3 +35,4 @@ X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\ref\Controle
 X:\Dev\ControleDeVendas\Controle de Vendas\bin\Debug\net6.0-windows\Controle de Vendas.dll.config
 X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle_de_Vendas.br.com.projeto.view.FrmFuncionario.resources
 X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle_de_Vendas.br.com.projeto.view.FrmFornecedores.resources
+X:\Dev\ControleDeVendas\Controle de Vendas\obj\Debug\net6.0-windows\Controle_de_Vendas.br.com.projeto.view.FrmProduto.resources
