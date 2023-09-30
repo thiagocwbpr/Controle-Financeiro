@@ -1,4 +1,5 @@
 ﻿using Controle_de_Vendas.br.com.projeto.dao;
+using Controle_de_Vendas.br.com.projeto.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,27 @@ namespace Controle_de_Vendas.br.com.projeto.view
             CbFornecedor.DataSource = f_dao.ListarFornecedor();
             CbFornecedor.DisplayMember = "nome";
             CbFornecedor.ValueMember = "id";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Valor do Fornecedor " + CbFornecedor.SelectedValue);
+        }
+
+        private void BtnSalvar_Click(object sender, EventArgs e)
+        {
+            Produto obj = new Produto();
+
+            obj.Descricao = TxtDescricao.Text;
+            obj.Preco = double.Parse(TxtPreco.Text);
+            obj.Quantidade = int.Parse(TxtQuantidade.Text);
+            obj.for_id = int.Parse(CbFornecedor.SelectedValue.ToString());
+
+            ProdutoDAO dao = new ProdutoDAO();
+
+            dao.CadastrarProduto(obj);
+
+            new Helpers();
         }
     }
 }

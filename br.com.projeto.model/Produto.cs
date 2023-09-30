@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Controle_de_Vendas.br.com.projeto.model
 {
-    internal class Produto
+    public class Produto
     {
+        public int Id { get; set; }
+        public string Descricao { get; set; }
+        public double Preco { get; set; }
+        public int Quantidade { get; set; }
+        public int for_id { get; set; }
+
     }
 }

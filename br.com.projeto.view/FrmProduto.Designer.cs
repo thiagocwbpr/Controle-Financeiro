@@ -32,6 +32,7 @@
             label1 = new Label();
             TabelaFornecedores = new TabControl();
             TabProdutos = new TabPage();
+            button1 = new Button();
             label4 = new Label();
             CbFornecedor = new ComboBox();
             TxtQuantidade = new TextBox();
@@ -94,6 +95,7 @@
             // 
             // TabProdutos
             // 
+            TabProdutos.Controls.Add(button1);
             TabProdutos.Controls.Add(label4);
             TabProdutos.Controls.Add(CbFornecedor);
             TabProdutos.Controls.Add(TxtQuantidade);
@@ -110,6 +112,16 @@
             TabProdutos.TabIndex = 1;
             TabProdutos.Text = "Dados Pessoais";
             TabProdutos.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(559, 157);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 51;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label4
             // 
@@ -294,6 +306,7 @@
             BtnSalvar.TabIndex = 15;
             BtnSalvar.Text = "Salvar";
             BtnSalvar.UseVisualStyleBackColor = false;
+            BtnSalvar.Click += BtnSalvar_Click;
             // 
             // BtnNovo
             // 
@@ -357,5 +370,6 @@
         private Button BtnNovo;
         private Label label4;
         private ComboBox CbFornecedor;
+        private Button button1;
     }
 }
